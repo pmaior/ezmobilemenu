@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WCl-VX-cac">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EzMobileMenu_WebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zK-Zs-fOt">
+                                <rect key="frame" x="16" y="87" width="343" height="493"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1zK-Zs-fOt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="Cgy-ev-nDk"/>
+                            <constraint firstItem="1zK-Zs-fOt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O1S-Yg-ZU5"/>
+                            <constraint firstItem="1zK-Zs-fOt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="TP0-5y-02a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1zK-Zs-fOt" secondAttribute="trailing" constant="16" id="k4k-ST-4VG"/>
+                            <constraint firstItem="1zK-Zs-fOt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yqa-7T-P6A"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MYE-FY-4Oz">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Back" id="AXw-k5-5Ao">
+                                <connections>
+                                    <action selector="backTapped:" destination="BYZ-38-t0r" id="FPC-Kg-9ek"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="FWD" id="b0G-y0-5mY">
+                                <connections>
+                                    <action selector="fwdTapped:" destination="BYZ-38-t0r" id="CgW-DB-pZc"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Refresh" id="Ayy-C7-knT">
+                                <connections>
+                                    <action selector="refreshTapped:" destination="BYZ-38-t0r" id="xET-s5-RqY"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Home" id="KHZ-Wp-eFD">
+                                <connections>
+                                    <action selector="homeTapped:" destination="BYZ-38-t0r" id="7jo-eS-XSb"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mainWebViiew" destination="1zK-Zs-fOt" id="MLf-5W-f6p"/>
+                        <outlet property="navBar" destination="MYE-FY-4Oz" id="Ez1-o3-uB4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="456.80000000000001" y="118.29085457271366"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lf9-PN-1P8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WCl-VX-cac" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="42Y-dZ-tW5">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zsd-BN-0QL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8qu-fo-cEn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50" y="73"/>
+        </scene>
+    </scenes>
+</document>
